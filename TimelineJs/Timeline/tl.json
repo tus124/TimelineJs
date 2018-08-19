@@ -1,0 +1,267 @@
+{
+    "events": [
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"08",
+                "minute": 		"20",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "pcx_enddate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"17",
+                "minute": 		"00",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+             "text": {
+                "headline": "<img src='./images/arrow.png'> Event Intake<ul><li>Anomalous</li></ul>",
+                "text": "Emailed top secret document to an unauthorized person"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"08",
+                "minute": 		"45",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "pcx_enddate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"11",
+                "minute": 		"20",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/arrow.png'> Event Intake<ul><li>Not Anomalous</li><li>Not Security concern</li></ul>",
+                "text": "Too many printed copies"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"05",
+                "hour": 		"18",
+                "minute": 		"20",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/list.png'> Prelim Opened<ul><li>by ops lead X</li></ul>",
+                "text": ""
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"06",
+                "hour": 		"09",
+                "minute": 		"40",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/list.png'> Leads Assigned",
+                "text": "<ul><li>Lead: Christophe Dzurilla</li><li>Alternate: Aver Gross</li><li>Manager: Novia Maduro</li></ul>"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"06",
+                "hour": 		"09",
+                "minute": 		"40",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/list.png'> Checks Preformed",
+                "text": "<ul><li>x/x/2018: FinCen</li><li>x/x/2018: Foreign travel</li><li>x/x/2018: Files from Hiring/li></ul>"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"10",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/list.png'> Flaged for inquiry",
+                "text": "<ul><li>Details</li></ul>"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"11",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/list.png'> Ops Lead Approved",
+                "text": "<ul><li>Details</li></ul>"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"12",
+                "hour": 		"",
+                "minute": 		"",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/list.png'> Deconficted",
+                "text": "<ul><li>Details</li></ul>"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"12",
+                "hour": 		"16",
+                "minute": 		"00",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/list.png'> OGC reviewed",
+                "text": "<ul><li>Details</li></ul>"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"13",
+                "hour": 		"16",
+                "minute": 		"00",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/search.png'> Approved",
+                "text": "<ul><li>Details</li></ul>"
+            },
+            "pcx_name": "overview"
+        },
+        {
+            "pcx_begindate": {
+                "year":			"2018",
+                "month":		"01",
+                "day": 			"15",
+                "hour": 		"00",
+                "minute": 		"00",
+                "second": 		"",
+                "millisecond": 	"",
+                "format": 		""
+            },
+            "background": {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            },
+            "text": {
+                "headline": "<img src='./images/search.png'> Checks Perdormed",
+                "text": "<ul><li>Details</li></ul>"
+            },
+            "pcx_name": "overview"
+        }
+        
+    ]
+}

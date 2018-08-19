@@ -1,0 +1,17 @@
+﻿html, body {
+    height: 350px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.tl-timeline {
+}
+
+.tl-timenav .tl-headline ul {
+    display: none;
+}
+
+P {
+    margin: 0;
+}

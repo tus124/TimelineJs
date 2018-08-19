@@ -1,0 +1,200 @@
+﻿    <!-- CSS-->
+    <link rel="stylesheet" href="css/timeline.css">
+    <!--FONT-->
+    <link rel="stylesheet" href="css/fonts/font.segoe_ui_normal_segoe_ui_light.css">
+    <!-- Style-->
+    <style>
+        html, body {
+            height: 350px;
+            width: 100px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .tl-timeline {
+        }
+
+        .tl-timenav .tl-headline ul {
+            display: none;
+        }
+    </style>
+
+    <div id="timeline"></div>
+    <!-- JavaScript-->
+    <script src="js/timeline.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            datatype: "json",
+            url: "",
+            beforeSend: function (XMLHttpRequest) {
+                XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
+                XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
+                XMLHttpRequest.setRequestHeader("Accept", "application/json");
+                XMLHttpRequest.setRequestHeader("Prefer", "odata.include-annotations=\"*\"");
+            },
+            async: true,
+            success: function (data, textStatus, xhr) {
+                debugger;
+                var results = data;
+                if (results.length == 0) {
+                    $('#timeline').html("No results");
+                } else {
+                    var tl = {};
+                    tl.events = [];
+
+                    for (var i = 0; i < results.length; i++) {
+                        var start = results.value[i]["start"] || new Date();
+                        var end = results.value[i]["end"] || new Date();
+                        var name = results.value[i]["name"] || "";
+                        var details = results.value[i]["details"] || "";
+                        tl.events.push(eventGetJson(start, end, name, details));
+                    }
+                    //console.log(tl);
+                    var timeline = new TL.Timeline('timeline', tl, {
+                        ga_property_id: "UA-27829802-4",
+                        is_embed: true,
+                        scale_factor: 1,
+                        timenav_position: "top"
+                    });
+                    //adjust Iframe height;
+                    $(window.frameElement, window.parent.document).height($('#timeline').height());
+                }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.log("Bad Timeline Query")
+                $('#timeline').html("No results");
+            }
+        });
+
+        function eventGetJson(start, end, name, details) {
+            var event = {};
+            if (start != null) {
+                event.start_date = eventGetJsonData(moment(start));
+            }
+            if (end != null) {
+                event.end_date = eventGetJsonData(moment(end));
+            }
+            event.background = {
+                "color": "#999999",
+                "opacity": 50,
+                "url": null
+            };
+            event.text = {
+                "headline": "<img src='./images/arrow.png'> " + name,
+                "text": details
+            }
+            return event;
+        }
+
+        function eventGetJsonData(date) {
+            return {
+                "year": date.format("YYYY"),
+                "month": date.format("MM"),
+                "day": date.format("DD"),
+                "hour": date.format("HH"),
+                "minute": date.format("mm"),
+                "second": "",
+                "millisecond": "",
+                "format": ""
+            }
+        }
+       /* debugger;
+        if (window.parent.Xrm.Page.data == null) {
+            $('#timeline').html("Not a relevant timeline entity");
+            $(window.frameElement, window.parent.document).height($('#timeline').height());
+        } else {
+            var entity = window.parent.Xrm.Page.data.entity.getEntityName();
+            var id = window.parent.Xrm.Page.data.entity.getId().replace("{", "").replace("}", "");
+            //console.log(entity);
+            //console.log(id);
+
+            var filterField = "";
+            if (entity == "isims_itoccase") {
+                filterField = "_isims_casetimelineid_value";
+            } else if (entity == "contact") {
+                filterField = "_isims_personaid_value";
+            }
+            var url = window.parent.Xrm.Page.context.getClientUrl() + "/api/data/v8.1/isims_itoctimelines?$select=isims_details,isims_end,isims_name,isims_start&$filter=" + filterField + " eq " + id;
+
+            $.ajax({
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                datatype: "json",
+                url: url,
+                beforeSend: function (XMLHttpRequest) {
+                    XMLHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
+                    XMLHttpRequest.setRequestHeader("OData-Version", "4.0");
+                    XMLHttpRequest.setRequestHeader("Accept", "application/json");
+                    XMLHttpRequest.setRequestHeader("Prefer", "odata.include-annotations=\"*\"");
+                },
+                async: true,
+                success: function (data, textStatus, xhr) {
+                    var results = data;
+                    if (results.value.length == 0) {
+                        $('#timeline').html("No results");
+                    } else {
+                        var tl = {};
+                        tl.events = [];
+
+                        for (var i = 0; i < results.value.length; i++) {
+                            var isims_start = results.value[i]["isims_start"];
+                            var isims_end = results.value[i]["isims_end"];
+                            var isims_name = results.value[i]["isims_name"] || "";
+                            var isims_details = results.value[i]["isims_details"] || "";
+                            tl.events.push(eventGetJson(isims_start, isims_end, isims_name, isims_details));
+                        }
+                        //console.log(tl);
+                        var timeline = new TL.Timeline('timeline', tl, {
+                            ga_property_id: "UA-27829802-4",
+                            is_embed: true,
+                            scale_factor: 1,
+                            timenav_position: "top"
+                        });
+                        //adjust Iframe height;
+                        $(window.frameElement, window.parent.document).height($('#timeline').height());
+                    }
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log("Bad Timeline Query")
+                    $('#timeline').html("No results");
+                }
+            });
+
+            function eventGetJson(start, end, name, details) {
+                var event = {};
+                if (start != null) {
+                    event.start_date = eventGetJsonData(moment(start));
+                }
+                if (end != null) {
+                    event.end_date = eventGetJsonData(moment(end));
+                }
+                event.background = {
+                    "color": "#999999",
+                    "opacity": 50,
+                    "url": null
+                };
+                event.text = {
+                    "headline": "<img src='./images/arrow.png'> " + name,
+                    "text": details
+                }
+                return event;
+            }
+
+            function eventGetJsonData(date) {
+                return {
+                    "year": date.format("YYYY"),
+                    "month": date.format("MM"),
+                    "day": date.format("DD"),
+                    "hour": date.format("HH"),
+                    "minute": date.format("mm"),
+                    "second": "",
+                    "millisecond": "",
+                    "format": ""
+                }
+            }
+        } */
+
+    </script>
